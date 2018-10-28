@@ -1,6 +1,6 @@
 // Default
 let score = 0;
-let heart = 5;
+let heart = 3;
 let record = 0;
 let showScore = document.getElementById('score');
 let sessionScore = document.getElementById('session-score');
@@ -20,7 +20,7 @@ showRecord.innerHTML = `${record}`;
 
 let restartGame = function () {
     score = 0;
-    heart = 5;
+    heart = 3;
     showScore.innerHTML = `${score}`;
     showHeart.innerHTML = `${heart}`;
     modalGameOver.classList.remove("active");
@@ -93,7 +93,7 @@ class Enemy extends Component {
         modalGameOver.classList.add("active");
         record = record;
         showScore.innerHTML = `${score}`;
-        showHeart.innerHTML = `${heart}`;
+        showHeart.innerHTML = 0;
         showRecord.innerHTML = `${record}`;
         player.reset();
         this.resetPosition();
@@ -159,7 +159,6 @@ class Gem extends Component {
     reset() {
         this.resetPosition();
     }
-
 }
 
 

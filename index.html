@@ -6,27 +6,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="modal-gameover">
-        <h2>Game OVEEEEERRRR!!!</h2>
-        <br>
-        <span>Your score is <span id="session-score"></span></span>
-        <br>
-        <br>
-        <button onclick="restartGame()">Restart Game</button>
-    </div>
-    <div class="game-info">
-        <div>
-            Score:
-            <span id="score"></span>
+    
+    <div class="global">
+        <div class="game__content">
+            <div id="modal-gameover">
+                <h1 class="title--gameover">Game OVEEER!!!</h1>
+                <h2>Your score is <span id="session-score"></span></h2>
+                <button class="btn-restart" onclick="restartGame()">Press enter to restart the game</button>
+            </div>
+            <div class="game__header">
+                <div>
+                    Score: <span id="score"></span>
+                </div>
+                <div>
+                    <span class="heart-small"></span> <span id="heart"></span>
+                </div>
+            </div>
+            <div id="game"></div>
+            <div class="game__footer">
+             Record: <span id="record"></span>
+            </div>
         </div>
-        <div>
-            Life:
-            <span id="heart"></span>
-        </div>
-        <div>
-            Record:
-            <span id="record"></span>
-        </div>
+   
     </div>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
