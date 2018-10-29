@@ -15,3 +15,8 @@ To play you will need to know the controls of the game:
  - `Down key`: move down
  - `Left key`: move left
  - `Right key`: move right
+
+
+## Want to play online? 
+<a href="https://aulus.github.io/frontend-nanodegree-arcade-game" target="_blank">
+Play online</a>
