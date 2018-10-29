@@ -6,7 +6,9 @@ let showScore = document.getElementById('score');
 let sessionScore = document.getElementById('session-score');
 let showHeart = document.getElementById('heart');
 let showRecord = document.getElementById('record');
-let modalGameOver = document.getElementById("modal-gameover");
+let modalGameOver = document.getElementById('modal-gameover');
+let modalInstructions = document.getElementById('modal-instructions');
+
 showScore.innerHTML = `${score}`;
 sessionScore.innerHTML = `${score}`;
 showHeart.innerHTML = `${heart}`;
@@ -25,8 +27,19 @@ let restartGame = function () {
     heart = 3;
     showScore.innerHTML = `${score}`;
     showHeart.innerHTML = `${heart}`;
-    modalGameOver.classList.remove("active");
+    modalGameOver.classList.remove('active');
+    modalInstructions.classList.remove('active');
 };
+
+let modalInstructionsActive = function () {
+    return modalInstructions.classList.contains('active');
+}
+        
+const startGame = function () {
+    console.log('START');
+    modalInstructions.classList.remove('active');
+}
+console.log('oi');
 
 // Class for Component
 class Component {
@@ -93,7 +106,7 @@ class Enemy extends Component {
     } 
     
     resetGame() {
-        modalGameOver.classList.add("active");
+        modalGameOver.classList.add('active');
         record = record;
         showHeart.innerHTML = 0;
         showScore.innerHTML = `${score}`;
@@ -120,7 +133,7 @@ class Player extends Component {
     }
 
     handleInput(input) {
-        if(modalGameOverActive()) {
+        if(modalGameOverActive() || modalInstructionsActive()) {
             if (input === 'up') 0;
             if (input === 'down') 0;
             if (input === 'left') 0;
