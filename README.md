@@ -1,6 +1,17 @@
-frontend-nanodegree-arcade-game
-===============================
+# Project: Flipper Game in Javascript
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+This project is part of the Advanced Nanodegree Advanced Front-End course. In the creation of the game was used HTML, CSS and Javascript (ES6, Canvas).
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## The Game
+
+About the game, you will have 3 lives to catch the most stars on the street to earn points and create a record, but beware of enemies, if they touch you, you lose 1 life.
+
+Note: Each star earns 100 points.
+
+## How to play?
+
+To play you will need to know the controls of the game:
+ - `Up key`: move up
+ - `Down key`: move down
+ - `Left key`: move left
+ - `Right key`: move right

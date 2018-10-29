@@ -7,17 +7,19 @@ let sessionScore = document.getElementById('session-score');
 let showHeart = document.getElementById('heart');
 let showRecord = document.getElementById('record');
 let modalGameOver = document.getElementById("modal-gameover");
+showScore.innerHTML = `${score}`;
+sessionScore.innerHTML = `${score}`;
+showHeart.innerHTML = `${heart}`;
+showRecord.innerHTML = `${record}`;
+
+// added modalGameOver active
 let modalGameOverActive = function () {
     sessionScore.innerHTML = `${score}`;
     showRecord.innerHTML = `${record}`;
     return modalGameOver.classList.contains('active');
 } 
 
-showScore.innerHTML = `${score}`;
-sessionScore.innerHTML = `${score}`;
-showHeart.innerHTML = `${heart}`;
-showRecord.innerHTML = `${record}`;
-
+// restart game
 let restartGame = function () {
     score = 0;
     heart = 3;
@@ -25,7 +27,6 @@ let restartGame = function () {
     showHeart.innerHTML = `${heart}`;
     modalGameOver.classList.remove("active");
 };
-
 
 // Class for Component
 class Component {
@@ -37,6 +38,7 @@ class Component {
         this.sprite = sprite;
     }
 
+    // Check colission for component
     checkCollision() {      
         return (
             player.x < this.x + 80 &&
@@ -45,6 +47,7 @@ class Component {
             60 + player.y > this.y)
     }
 
+    // reset position for component
     resetPosition() {
         this.x = this.posX[Math.floor(Math.random() * this.posX.length)];
         this.y = this.posY[Math.floor(Math.random() * this.posY.length)];
@@ -92,8 +95,8 @@ class Enemy extends Component {
     resetGame() {
         modalGameOver.classList.add("active");
         record = record;
-        showScore.innerHTML = `${score}`;
         showHeart.innerHTML = 0;
+        showScore.innerHTML = `${score}`;
         showRecord.innerHTML = `${record}`;
         player.reset();
         this.resetPosition();
@@ -148,7 +151,7 @@ class Gem extends Component {
 
     update(dt) {
         if(this.checkCollision()) {
-            score += 10;
+            score += 100;
             if(score > record) record = score;    
             showRecord.innerHTML = `${record}`;
             showScore.innerHTML = `${score}`;
