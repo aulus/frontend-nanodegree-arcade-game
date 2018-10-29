@@ -131,8 +131,14 @@ class Player extends Component {
   }
 
   update(dt) {
-    if(this.y <= 0){
-      // console.log('UFA!! Respire um pouco e pegue mais estrelas!');
+    if(this.y <= 0) {
+      score += 10;
+      if(score > record) {
+        record = score;    
+        showRecord.innerHTML = `${record}`;
+      }
+      showScore.innerHTML = `${score}`;
+      player.reset();
     }
   }
 
@@ -172,8 +178,10 @@ class Gem extends Component {
     // checkCollision for gem
     if(this.checkCollision()) {
       score += 100;
-      if(score > record) record = score;    
-      showRecord.innerHTML = `${record}`;
+      if(score > record) {
+        record = score;    
+        showRecord.innerHTML = `${record}`;
+      }
       showScore.innerHTML = `${score}`;
       this.reset();
     }
