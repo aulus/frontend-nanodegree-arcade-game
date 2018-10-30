@@ -138,7 +138,7 @@ class Player extends Component {
         showRecord.innerHTML = `${record}`;
       }
       showScore.innerHTML = `${score}`;
-      player.reset();
+      this.reset();
     }
   }
 
