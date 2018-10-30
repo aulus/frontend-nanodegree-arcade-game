@@ -1,7 +1,19 @@
+'use strict'
+
+// config default
+let config = {
+  "player": {
+    "initial_X": 202,
+    "initial_Y": 386
+  }
+}
+
 // Default
 let score = 0;
 let heart = 3;
 let record = 0;
+
+// get elements by id
 let showScore = document.getElementById('score');
 let sessionScore = document.getElementById('session-score');
 let showHeart = document.getElementById('heart');
@@ -160,8 +172,8 @@ class Player extends Component {
 
   // Reset position player
   reset() {
-    this.x = 202;
-    this.y = 386;
+    this.x = config.player.initial_X;
+    this.y = config.player.initial_Y;
   }
 }
 
@@ -194,7 +206,7 @@ class Gem extends Component {
 }
 
 // Instantiate objects player, allEnemies and Gem
-let player = new Player(202, 386, 'images/char-boy.png');
+let player = new Player(config.player.initial_X, config.player.initial_Y, 'images/char-boy.png');
 
 let allEnemies = [
   new Enemy(500, null, 'images/enemy-bug.png'),
